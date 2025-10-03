@@ -1,0 +1,35 @@
+# 自动部署 Hugo 博客到 GitHub Pages
+
+# 1. 进入项目根目录
+Set-Location -Path "D:\hugo\myblog"
+
+# 2. 生成静态页面（-D 表示包含草稿）
+Write-Host "👉 正在生成静态页面..."
+hugo -D
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ Hugo 构建失败，请检查配置。"
+    exit 1
+}
+
+# 3. 进入 public 文件夹（Hugo 默认输出目录）
+Set-Location .\public
+
+# 4. 如果 public 不是 git 仓库，就初始化并关联远程
+if (!(Test-Path ".git")) {
+    git init
+    git branch -M main
+    # ⚠️ 修改为你的 GitHub Pages 仓库地址
+    git remote add origin https://github.com/youzjuzi/my-hugo-blog.git
+}
+
+# 5. 提交并推送到 GitHub
+Write-Host "👉 提交并推送到 GitHub Pages..."
+git add .
+git commit -m "🚀 deploy blog at $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+git push origin main --force
+
+# 6. 回到项目根目录
+Set-Location ..
+
+Write-Host "✅ 部署完成！你的博客已更新到 GitHub Pages。"
