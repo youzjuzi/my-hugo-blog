@@ -1,13 +1,13 @@
 # =========================================
 # 纯中文单语言配置文件
 # =========================================
-baseURL: 'https://example.com/' # <-- 修改成你的最终网站域名
+baseURL: '' # <-- 修改成你的最终网站域名
 languageCode: 'zh-cn'
 DefaultContentLanguage: 'zh-cn'
 hasCJKLanguage: true
 theme: 'hugo-theme-stack'
-title: '演示站点' # <-- 修改成你自己的网站标题
-copyright: '你的名字或昵称' # <-- 修改成你的版权信息
+title: '我的博客' # <-- 修改成你自己的网站标题
+copyright: 'youzi' # <-- 修改成你的版权信息
 
 # 分页设置，每页显示3篇文章
 pagination:
@@ -40,8 +40,8 @@ params:
 
   # 左侧边栏
   sidebar:
-    emoji: '🍥'
-    subtitle: '演示说明' # <-- 修改成你自己的副标题
+    emoji: '❤️'
+    subtitle: '学习！' # <-- 修改成你自己的副标题
     avatar:
       enabled: true
       local: true
