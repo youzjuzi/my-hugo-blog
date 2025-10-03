@@ -1,0 +1,130 @@
+# =========================================
+# 纯中文单语言配置文件
+# =========================================
+baseURL: 'https://example.com/' # <-- 修改成你的最终网站域名
+languageCode: 'zh-cn'
+DefaultContentLanguage: 'zh-cn'
+hasCJKLanguage: true
+theme: 'hugo-theme-stack'
+title: '演示站点' # <-- 修改成你自己的网站标题
+copyright: '你的名字或昵称' # <-- 修改成你的版权信息
+
+# 分页设置，每页显示3篇文章
+pagination:
+  pagerSize: 3
+
+# 永久链接格式
+permalinks:
+  post: /p/:slug/
+  page: /:slug/
+
+# =========================================
+# 主要参数 (params)
+# =========================================
+params:
+  mainSections:
+    - post
+  featuredImageField: image
+  rssFullContent: true
+  favicon: # 例如: /favicon.ico (图标需放在 static 目录下)
+
+  # 页脚设置
+  footer:
+    since: 2024 # <-- 修改成你的网站起始年份
+    customText: '' # 可在此处添加备案号等信息
+
+  # 日期格式
+  dateFormat:
+    published: '2006-01-02'
+    lastUpdated: '2006-01-02 15:04'
+
+  # 左侧边栏
+  sidebar:
+    emoji: '🍥'
+    subtitle: '演示说明' # <-- 修改成你自己的副标题
+    avatar:
+      enabled: true
+      local: true
+      src: 'img/avatar.png' # <-- 确保你的头像在 assets/img/avatar.png
+
+  # 文章页面设置
+  article:
+    math: false # 如果你不用数学公式，保持false
+    toc: true # 显示文章目录
+    readingTime: true # 显示阅读时间
+    license:
+      enabled: true
+      default: 'Licensed under CC BY-NC-SA 4.0'
+
+  # 评论系统 (只启用一个)
+  # 这里默认开启了 Disqus, 你可以换成 Waline 或其他
+  comments:
+    enabled: true
+    provider: 'disqus' # <-- 你想用的评论提供商, e.g., 'waline', 'giscus'
+
+    # Disqus 配置
+    disqus:
+      shortname: "hugo-theme-stack" # <-- 必须修改成你自己的 Disqus shortname
+
+    # Waline 配置
+    waline:
+      serverURL: '' # <-- 修改成你的 Waline 服务器地址
+      lang: 'zh-CN'
+      # ... 其他 Waline 设置
+
+  # 首页小组件
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+
+  # 配色方案
+  colorScheme:
+    toggle: true
+    default: auto # auto, light, dark
+
+# =========================================
+# 菜单设置
+# =========================================
+menu:
+  # 主导航菜单留空，由页面内的 Front Matter 控制
+  # 这样做更灵活
+  main: []
+
+  # 社交链接菜单
+  social:
+    - identifier: github
+      name: GitHub
+      url: 'https://github.com/CaiJimmy/hugo-theme-stack' # <-- 修改成你的 GitHub 地址
+      params:
+        icon: brand-github
+
+    - identifier: twitter
+      name: Twitter
+      url: 'https://twitter.com' # <-- 修改成你的 Twitter 地址
+      params:
+        icon: brand-twitter
+
+# =========================================
+# 其他高级配置 (通常无需修改)
+# =========================================
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 2
+  highlight:
+    noClasses: false

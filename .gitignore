@@ -1,0 +1,45 @@
+# 忽略 Hugo 生成的文件
+/public/
+/resources/
+/hugo_cache/
+/hugo_stats.json
+
+# 忽略操作系统文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 忽略日志文件
+*.log
+
+# 忽略临时文件
+*.tmp
+*.swp
+*.swo
+*~
+
+# 忽略二进制/可执行文件（例如 hugo.exe）
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.deb
+*.rpm
+*.msi
+
+# 忽略 IDE/编辑器配置
+.vscode/
+.idea/
+*.iml
+
+# 忽略 Node.js 依赖（如果有用到前端构建）
+node_modules/
+
+# Python 虚拟环境（如果写脚本）
+.venv/
+__pycache__/
+
+# Git LFS 大文件缓存（如果启用 LFS）
+*.lfs
